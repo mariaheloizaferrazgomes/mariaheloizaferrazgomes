@@ -1,20 +1,26 @@
 programa{
   ///banco de informações
-  inteiro bag=1, bcc=1, bsn=123
+  inteiro bag=1, bcc=1, bsn=123, i
   caracter volta, deposito
-  real saldo = 10.000, limite = 500, total = limite + saldo 
+  real saldo = 10000, limite = 500, total = limite + saldo, deposito, saque 
 
 
   funcao vetor(){
     para(i=1; i<1000; i++){
 
+
     }
+
+
     para(i=1; i<1000; i++){
 
+
     }
+    
   }
 
-  funcao inicio() {
+
+  funcao inicio(){
 
     inteiro ag , cc , sn
      faca{
@@ -74,32 +80,63 @@ programa{
       escreva("total", total, "\n")
 
       escreva("deseja voltar ao menu principal s|n")
-      leia(volta)
+
       }
+       enquanto (volta != "s")
+       leia()
+       menu()
+
     }
     funcao extrato(){
       faca{
         escreva(saldo+ deposito, "\n\n")
-        escreva("*--------------------------------*\n")
+        escreva("*--------------------------------*\n\n")
 
-        escreva("deseja voltar ao menu principal s|n")
+        escreva("deseja voltar ao menu principal s|n \n")
       }
-    }
-
-    funcao saque(){
-      escreva("deseja voltar ao menu principai S|n\n")
-
+      enquanto(volta != "s")
+      limpa()
+      menu()
     }
     funcao deposito(){
       faca{
-        escreva("qual valor que deseja depositar :\n")
+        escreva("qual valor que deseja depositar :")
         leia(deposito)
-        escreva("*-----------------------------*\n")
+        escreva("*-----------------------------*\n\n")
 
-        escreva("deseja voltar ao principal s|n")
+        escreva("deseja voltar ao menu principal s|n? ")
         leia(volta)
-      }  
+      }
+      enquanto (volta != 's')
+      limpa()
+      menu()
+   }
+
+   funcao saque(){
+
+   faca{
+
+    escreva("qual valor voce deseja sacar: ")
+    leia(saque)
+    escreva("---------------------------\n\n")
+
+    se(saldo < saque){
+
+      escreva("valor indisponivel")
+
+
+    }
+
+    saque - saldo
+    escreva("deseja voltar ao seu menu principal s|n ?")
+    leia(volta)
+
+
+   }
+   enquanto (volta != 's')
+   limpa()
+   menu()
    }
    
-  
 }
+
